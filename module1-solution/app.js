@@ -59,7 +59,7 @@
         disclosure = "Empty ";
         disclosure += plural ? "items " : "item ";
         disclosure += "(i.e., `" + emptyItems[0] + "`) ";
-        disclosure += plural ? "is " : "are ";
+        disclosure += plural ? "are " : "is ";
         disclosure += "not considered as an item towards to the count";
       }
       $scope.disclosure = disclosure;
