@@ -13,23 +13,25 @@
 
     $scope.checkMenu = function() {
       var emptyItemReg = /\,\,+/g;
-      var endingCommaReg = /,+$/;
+      var startEndCommaReg = /^\,+|\,+$/g;
 
       function getEmptyItems(lunchMenu) {
         var emptyItems;
+        lunchMenu = lunchMenu.replace(/\s/g, '');
         emptyItems = lunchMenu.match(emptyItemReg);
         if(!emptyItems)
-          emptyItems = lunchMenu.match(endingCommaReg);
+          emptyItems = lunchMenu.match(startEndCommaReg);
         return emptyItems;
       }
 
       function getMenuItems(lunchMenu) {
         var menuItems;
-        if ( lunchMenu !== '' ) {
+        if (lunchMenu) {
           lunchMenu = lunchMenu.replace(/\s/g, '');
-          lunchMenu = lunchMenu.replace(endingCommaReg, '');
+          lunchMenu = lunchMenu.replace(startEndCommaReg, '');
           lunchMenu = lunchMenu.replace(emptyItemReg, ",");
-          menuItems = lunchMenu.split(",");
+          if (lunchMenu !== '')
+            menuItems = lunchMenu.split(",");
         }
         return menuItems;
       }
