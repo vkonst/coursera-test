@@ -1,0 +1,2 @@
+This file contains the solution of the Module 3 Coding Assignment for the course "Single Page Web Applications with AngularJS" on Coursera.
+SIGN UP for the course. It's fun. And it's FREE!
